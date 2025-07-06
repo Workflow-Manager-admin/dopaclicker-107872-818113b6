@@ -10,7 +10,38 @@ const api = axios.create({
 });
 
 export const gameService = {
-  // Click actions
+  // External API endpoints
+  getMemeTemplates: async () => {
+    try {
+      const response = await api.get('/external/meme_templates');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching meme templates:', error);
+      throw error;
+    }
+  },
+
+  getAudiusTrending: async () => {
+    try {
+      const response = await api.get('/external/audius_trending');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching Audius tracks:', error);
+      throw error;
+    }
+  },
+
+  getNewsHeadlines: async () => {
+    try {
+      const response = await api.get('/external/news_headlines');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching news headlines:', error);
+      throw error;
+    }
+  },
+
+  // Game endpoints
   registerClick: async (clickPower) => {
     try {
       const response = await api.post('/click', { power: clickPower });

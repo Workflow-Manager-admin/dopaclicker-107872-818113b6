@@ -24,6 +24,20 @@ export const useGame = () => {
     refetchInterval: 10000, // Refresh every 10 seconds
   });
 
+  // Query for meme templates
+  const { data: memeTemplates } = useQuery({
+    queryKey: ['memeTemplates'],
+    queryFn: gameService.getMemeTemplates,
+    refetchInterval: 300000, // Refresh every 5 minutes
+  });
+
+  // Query for Audius trending tracks
+  const { data: audiusTracks } = useQuery({
+    queryKey: ['audiusTracks'],
+    queryFn: gameService.getAudiusTrending,
+    refetchInterval: 300000, // Refresh every 5 minutes
+  });
+
   // Mutation for clicks
   const clickMutation = useMutation({
     mutationFn: gameService.registerClick,

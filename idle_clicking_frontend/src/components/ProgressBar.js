@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProgressBar.css';
 
 // PUBLIC_INTERFACE
 const ProgressBar = ({ current, max, level }) => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import './RewardsPanel.css';
 
 const RewardsPanel = ({ rewards, onClaimReward }) => {
   return (

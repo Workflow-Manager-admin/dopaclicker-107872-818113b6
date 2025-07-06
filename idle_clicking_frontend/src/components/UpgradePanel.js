@@ -1,4 +1,5 @@
 import React from 'react';
+import './UpgradePanel.css';
 
 // PUBLIC_INTERFACE
 const UpgradePanel = ({ upgrades, onUpgrade, currentClicks }) => {

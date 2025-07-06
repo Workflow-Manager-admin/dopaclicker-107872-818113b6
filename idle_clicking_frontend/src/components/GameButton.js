@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './GameButton.css';
 
 // PUBLIC_INTERFACE
 const GameButton = ({ onClick }) => {

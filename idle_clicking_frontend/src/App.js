@@ -80,7 +80,7 @@ const GameComponent = () => {
             max={gameState?.maxXp || 100}
             level={gameState?.level || 1}
           />
-          <GameButton onClick={() => handleClick(handleGameClick, gameState?.clickPower || 1)} />
+          <GameButton onClick={() => handleClick(() => handleGameClick(gameState?.clickPower || 1), gameState?.clickPower || 1)} />
         </div>
 
         <UpgradePanel 
